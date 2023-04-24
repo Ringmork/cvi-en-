@@ -1,0 +1,29 @@
+
+
+input[type=submit] {
+
+background-color: aqua;
+
+}
+
+input[type=text] {
+
+background-color: rgb(167, 38, 184);
+color: blue;
+
+}
+
+
+
+h2:hover {
+
+background-color: rgb(64, 69, 100);
+
+}
+
+h1:hover {
+
+    background-color: rgb(201, 72, 21);
+    
+    }
+    

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="name">product:</label>
+    <input type="text" id="name" name="name" />
+    <br />
+    <label for="price">price:</label>
+    <input type="text" id="price" name="price" />
+    <br />
+    <input type="submit" value="Submit" onclick="add_item()" />
+    <button value="Submit" onclick="test_connection()" />
+    <table>
+      <thead>
+        <tr>
+          <th>product name</th>
+          <th>price</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      function add_item() {
+        var product_name = document.querySelector("#name").value;
+        var product_price = document.querySelector("#price").value;
+        var table_element = document.querySelector("table");
+        var tbody_element = table_element.querySelector("tbody");
+        const new_table_row = document.createElement("tr");
+        const new_table_value1 = document.createElement("td");
+        const new_table_value2 = document.createElement("td");
+        const text_node1 = document.createTextNode(product_name);
+        new_table_value1.appendChild(text_node1);
+        const text_node2 = document.createTextNode(product_price);
+        new_table_value2.appendChild(text_node2);
+        tbody_element.appendChild(new_table_row);
+        new_table_row.appendChild(new_table_value1);
+        new_table_row.appendChild(new_table_value2);
+      }
+
+      function test_connection() {
+        fetch("http://127.0.0.1:4000/", { mode: "no-cors" }).then((response) =>
+          console.log(response)
+        );
+      }
+    </script>
+  </body>
+</html>
